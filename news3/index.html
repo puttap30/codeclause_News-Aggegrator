@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News - Headlines</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa;
+        }
+
+        header {
+            background-color: #004d40;
+            padding: 1rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #ffffff;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .search input {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .news-page {
+            background-color: #ffffff;
+            padding: 2rem;
+            margin-top: 2rem;
+            border-radius: 5px;
+        }
+
+        .news-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .article-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .article {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .article img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .article .description {
+            padding: 1rem;
+        }
+
+        .article h3 {
+            margin-top: 0;
+        }
+
+        .article p {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                HEAD<br>LINES
+            </div>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">News</a>
+                <a href="#">World</a>
+                <a href="#">Politics</a>
+                <a href="#">Business</a>
+                <a href="#">Technology</a>
+                <a href="#">Health</a>
+            </nav>
+            <div class="search">
+                <input type="text" id="searchInput" placeholder="Search...">
+                <button onclick="searchArticles()">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container news-page">
+            <h2 class="news-title">News</h2>
+            <p>Showing 1-8 of 20 results</p>
+
+            <div class="article-list" id="articleList">
+                <div class="article" data-name="Global Economy Sees Unprecedented Growth">
+                    <img src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ipoGE55DSAwI/v0/-1x-1.jpg" alt="Global Economy">
+                    <div class="description">
+                        <h3>Global Economy Sees Unprecedented Growth</h3>
+                        <p>Experts analyze the factors behind the rapid growth in global markets, highlighting key economic drivers and potential risks.</p>
+                    </div>
+                </div>
+                <div class="article" data-name="Climate Change and Its Impact on Coastal Cities">
+                    <img src="https://www.nrdc.org/sites/default/files/styles/small_16x9_100/public/media-uploads/nrdc-effects-of-climate-change-1243537912-2400.jpg.jpg?h=c3635fa2&itok=9JTTTaJn" alt="Climate Change">
+                    <div class="description">
+                        <h3>Climate Change and Its Impact on Coastal Cities</h3>
+                        <p>Rising sea levels and increased storm activity pose significant threats to coastal communities worldwide, prompting urgent action.</p>
+                    </div>
+                </div>
+                <div class="article" data-name="Advancements in AI Technology">
+                    <img src="https://miro.medium.com/v2/resize:fit:1400/1*VcdLvvMwLRRnMYlByzEB8Q.jpeg" alt="AI Technology">
+                    <div class="description">
+                        <h3>Advancements in AI Technology</h3>
+                        <p>New AI innovations are transforming industries and everyday life, from healthcare to transportation, enhancing efficiency and accuracy.</p>
+                    </div>
+                </div>
+                <div class="article" data-name="Health Benefits of a Plant-Based Diet">
+                    <img src="https://images.healthshots.com/healthshots/en/uploads/2022/08/26144818/plant-based-diet.jpg" alt="Plant-Based Diet">
+                    <div class="description">
+                        <h3>Health Benefits of a Plant-Based Diet</h3>
+                        <p>Studies reveal the numerous health advantages of a plant-based diet, including reduced risk of chronic diseases and improved overall wellness.</p>
+                    </div>
+                </div>
+                <div class="article" data-name="Breakthroughs in Renewable Energy">
+                    <img src="https://media.licdn.com/dms/image/D5612AQFmLogl7rEWtA/article-cover_image-shrink_600_2000/0/1705857598413?e=2147483647&v=beta&t=dRZ3FYv2C0MKk7ZUu-KegWEleBLpwgA1JPN-9Jlf6S0" alt="Renewable Energy">
+                    <div class="description">
+                        <h3>Breakthroughs in Renewable Energy</h3>
+                        <p>Innovative technologies in renewable energy are paving the way for a sustainable future, reducing dependency on fossil fuels.</p>
+                    </div>
+                </div>
+                <div class="article" data-name="The Future of Space Exploration">
+                    <img src="https://media.assettype.com/analyticsinsight%2Fimport%2Fwp-content%2Fuploads%2F2021%2F01%2FThe-Future-of-Space-Explorations-is-in-the-Hands-of-AI-and-Robotics.jpg" alt="Space Exploration">
+                    <div class="description">
+                        <h3>The Future of Space Exploration</h3>
+                        <p>Private companies and government agencies are pushing the boundaries of space exploration, aiming for missions to Mars and beyond.</p>
+                    </div>
+                </div>
+                <div class="article" data-name="Cybersecurity Threats in the Modern World">
+                    <img src="https://media.licdn.com/dms/image/D4D12AQFr-hHVEmUlrg/article-cover_image-shrink_720_1280/0/1673245880173?e=2147483647&v=beta&t=X-v3cZhtDKrBwnHZNXLQi8tBiC8zDbeedIwGH-f71oc" alt="Cybersecurity">
+                    <div class="description">
+                        <h3>Cybersecurity Threats in the Modern World</h3>
+                        <p>As cyberattacks become more sophisticated, protecting sensitive data and maintaining digital security are more crucial than ever.</p>
+                    </div>
+                </div>
+                <div class="article" data-name="Innovations in Electric Vehicles">
+                    <img src="https://www.innovationnewsnetwork.com/wp-content/uploads/2022/10/wireless-charging-systems-696x392.jpg" alt="Electric Vehicles">
+                    <div class="description">
+                        <h3>Innovations in Electric Vehicles</h3>
+                        <p>Advancements in electric vehicle technology are accelerating the shift towards sustainable transportation, offering new possibilities for the future.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function searchArticles() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const articles = document.querySelectorAll('.article');
+            articles.forEach(article => {
+                const name = article.getAttribute('data-name').toLowerCase();
+                if (name.includes(input)) {
+                    article.style.display = 'block';
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
